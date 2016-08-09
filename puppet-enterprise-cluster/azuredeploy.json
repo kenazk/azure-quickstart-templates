@@ -533,7 +533,11 @@
   ],
   "outputs" : {
     "Puppet Enterprise Console FQDN:": {
-      "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName')), '2016-03-30').dnsSettings.fqdn]",
+      "value": "[concat('https://', reference(resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName')), '2016-03-30').dnsSettings.fqdn)]",
+      "type": "string"
+    },
+    "Puppet Enterprise Console Username:": {
+      "value": "admin",
       "type": "string"
     }
   }
